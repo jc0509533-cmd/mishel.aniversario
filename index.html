@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Josue ❤️ Mishel</title><style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+font-family:Arial,sans-serif;
+background:linear-gradient(180deg,#020111,#191970,#000);
+color:white;
+text-align:center;
+}
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+radial-gradient(2px 2px at 40px 70px,#fff,transparent),
+radial-gradient(1px 1px at 90px 40px,#fff,transparent),
+radial-gradient(2px 2px at 130px 80px,#fff,transparent);
+background-size:200px 200px;
+animation:moveStars 30s linear infinite;
+}
+
+@keyframes moveStars{
+from{transform:translateY(0);}
+to{transform:translateY(200px);}
+}
+
+.card{
+position:relative;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(8px);
+padding:25px;
+border-radius:25px;
+width:90%;
+max-width:500px;
+z-index:10;
+}
+
+img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+box-shadow:0 0 30px pink;
+}
+
+h1{
+margin-top:15px;
+font-size:32px;
+}
+
+#contador{
+margin-top:10px;
+font-size:18px;
+color:#ffd6ff;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+background:#ff4d94;
+color:white;
+}
+
+#mensaje{
+display:none;
+margin-top:20px;
+font-size:18px;
+line-height:1.6;
+}
+
+.corazon{
+position:absolute;
+font-size:25px;
+animation:subir 4s linear forwards;
+}
+
+@keyframes subir{
+0%{transform:translateY(0);opacity:1;}
+100%{transform:translateY(-100vh);opacity:0;}
+}
+</style></head><body><div class="stars"></div><div class="card"><img src="mishel.jpg"><h1>Josue ❤️ Mishel</h1><p>
+Desde el 6 de febrero de 2026 comenzó una historia
+que quiero seguir escribiendo contigo.
+</p><div id="contador"></div><button onclick="mostrarAmor()">
+✨ Toca Aquí Mi Amor ✨
+</button><div id="mensaje">
+🌹 Mishel 🌹<br><br>Gracias por cada sonrisa, cada momento y cada recuerdo.
+Eres una de las personas más especiales que han llegado a mi vida.
+
+A veces no encuentro las palabras correctas,
+pero quiero que sepas que cada día agradezco tenerte conmigo.
+
+Te quiero muchísimo. ❤️
+
+</div></div><script>
+
+const fechaInicio = new Date("2026-02-06");
+
+function actualizarContador(){
+const hoy = new Date();
+const dias = Math.floor((hoy-fechaInicio)/(1000*60*60*24));
+document.getElementById("contador").innerHTML =
+"💖 " + dias + " días juntos 💖";
+}
+
+actualizarContador();
+
+function mostrarAmor(){
+
+document.getElementById("mensaje").style.display="block";
+
+for(let i=0;i<40;i++){
+
+let corazon=document.createElement("div");
+
+corazon.className="corazon";
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+corazon.style.bottom="0";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+corazon.remove();
+},4000);
+}
+}
+</script></body>
+</html>
