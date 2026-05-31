@@ -1,77 +1,85 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Josue ❤️ Mishel</title><style>
-*{margin:0;padding:0;box-sizing:border-box;}
+<title>Josué ❤️ Mishel</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
 body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-font-family:Arial,sans-serif;
-background:linear-gradient(180deg,#020111,#191970,#000);
+background:linear-gradient(180deg,#050816,#0b1026,#1a0033);
 color:white;
 text-align:center;
+overflow-x:hidden;
+min-height:100vh;
 }
 
-.stars{
-position:absolute;
+.estrellas{
+position:fixed;
 width:100%;
 height:100%;
+top:0;
+left:0;
 background-image:
-radial-gradient(2px 2px at 20px 30px,#fff,transparent),
-radial-gradient(2px 2px at 40px 70px,#fff,transparent),
-radial-gradient(1px 1px at 90px 40px,#fff,transparent),
-radial-gradient(2px 2px at 130px 80px,#fff,transparent);
-background-size:200px 200px;
-animation:moveStars 30s linear infinite;
+radial-gradient(white 1px, transparent 1px);
+background-size:40px 40px;
+opacity:.5;
+z-index:-1;
+animation:mover 25s linear infinite;
 }
 
-@keyframes moveStars{
+@keyframes mover{
 from{transform:translateY(0);}
-to{transform:translateY(200px);}
+to{transform:translateY(40px);}
 }
 
-.card{
-position:relative;
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(8px);
-padding:25px;
-border-radius:25px;
-width:90%;
-max-width:500px;
-z-index:10;
-}
-
-img{
-width:220px;
-height:220px;
-border-radius:50%;
-object-fit:cover;
-border:4px solid white;
-box-shadow:0 0 30px pink;
+.contenedor{
+max-width:800px;
+margin:auto;
+padding:30px 20px;
 }
 
 h1{
+font-size:3rem;
 margin-top:15px;
-font-size:32px;
+}
+
+img{
+width:250px;
+height:250px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid white;
+box-shadow:0 0 30px pink;
+margin-top:20px;
 }
 
 #contador{
-margin-top:10px;
-font-size:18px;
+margin-top:20px;
+font-size:22px;
 color:#ffd6ff;
 }
 
-button{
+.texto{
 margin-top:20px;
-padding:12px 25px;
-font-size:18px;
+font-size:20px;
+line-height:1.6;
+}
+
+.boton{
+margin-top:25px;
+padding:15px 30px;
 border:none;
-border-radius:30px;
+border-radius:40px;
+font-size:20px;
 cursor:pointer;
 background:#ff4d94;
 color:white;
@@ -79,68 +87,164 @@ color:white;
 
 #mensaje{
 display:none;
-margin-top:20px;
-font-size:18px;
-line-height:1.6;
+margin-top:25px;
+font-size:24px;
+font-weight:bold;
+}
+
+#carta{
+display:none;
+margin-top:25px;
+background:rgba(255,255,255,.1);
+padding:20px;
+border-radius:20px;
+line-height:1.8;
 }
 
 .corazon{
-position:absolute;
+position:fixed;
+bottom:0;
 font-size:25px;
 animation:subir 4s linear forwards;
 }
 
 @keyframes subir{
-0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-100vh);opacity:0;}
+0%{
+transform:translateY(0);
+opacity:1;
 }
-</style></head><body><div class="stars"></div><div class="card"><img src="mishel.jpg"><h1>Josue ❤️ Mishel</h1><p>
-Desde el 6 de febrero de 2026 comenzó una historia
-que quiero seguir escribiendo contigo.
-</p><div id="contador"></div><button onclick="mostrarAmor()">
-✨ Toca Aquí Mi Amor ✨
-</button><div id="mensaje">
-🌹 Mishel 🌹<br><br>Gracias por cada sonrisa, cada momento y cada recuerdo.
-Eres una de las personas más especiales que han llegado a mi vida.
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
 
-A veces no encuentro las palabras correctas,
-pero quiero que sepas que cada día agradezco tenerte conmigo.
+</style>
+</head>
+
+<body>
+
+<div class="estrellas"></div>
+
+<div class="contenedor">
+
+<img src="mishel.jpg" alt="Mishel">
+
+<h1>Josué ❤️ Mishel</h1>
+
+<div id="contador"></div>
+
+<p class="texto">
+Desde el 6 de febrero de 2026 comenzó una historia
+que quiero seguir escribiendo contigo cada día.
+</p>
+
+<button class="boton" onclick="mostrarMensaje()">
+❤️ Descubre cuánto te amo ❤️
+</button>
+
+<div id="mensaje"></div>
+
+<div id="carta">
+<h2>💌 Carta para Mishel 💌</h2>
+
+<p>
+Mi amor:
+
+Gracias por llegar a mi vida.
+
+Desde aquel 6 de febrero de 2026,
+cada día se ha vuelto más especial porque puedo compartir momentos contigo.
+
+Tu sonrisa ilumina mis días,
+tus palabras me acompañan incluso cuando estamos lejos,
+y cada recuerdo contigo tiene un lugar especial en mi corazón.
+
+Quiero seguir construyendo recuerdos,
+cumpliendo sueños
+y caminando a tu lado.
+
+Gracias por existir.
 
 Te quiero muchísimo. ❤️
+</p>
+</div>
 
-</div></div><script>
+</div>
+
+<script>
+
+const frases = [
+"❤️ Eres lo mejor que me ha pasado.",
+"🌹 Gracias por existir.",
+"💖 Cada día te amo más.",
+"🥰 Mi lugar favorito es contigo.",
+"✨ Eres mi sueño hecho realidad.",
+"💌 Contigo todo es más bonito.",
+"❤️ Tu sonrisa ilumina mis días.",
+"🌷 Eres mi razón para sonreír.",
+"💕 Mi corazón siempre te elige.",
+"😍 Eres mi persona favorita.",
+"💖 Gracias por cada momento juntos.",
+"🌹 Amo cada detalle de ti.",
+"🥰 Eres mi felicidad diaria.",
+"❤️ No cambiaría nada de nosotros.",
+"✨ Eres mi casualidad favorita.",
+"💌 Gracias por hacer mi vida especial.",
+"🌷 Cada día contigo vale la pena.",
+"💕 Me encanta compartir mi tiempo contigo.",
+"😍 Eres mi mejor aventura.",
+"❤️ Mi corazón tiene tu nombre."
+];
 
 const fechaInicio = new Date("2026-02-06");
 
 function actualizarContador(){
+
 const hoy = new Date();
-const dias = Math.floor((hoy-fechaInicio)/(1000*60*60*24));
+
+const dias = Math.floor(
+(hoy - fechaInicio)/(1000*60*60*24)
+);
+
 document.getElementById("contador").innerHTML =
-"💖 " + dias + " días juntos 💖";
+"💖 Han pasado " + dias +
+" días desde que comenzó nuestra historia 💖";
+
 }
 
 actualizarContador();
 
-function mostrarAmor(){
+function mostrarMensaje(){
 
+const frase =
+frases[Math.floor(Math.random()*frases.length)];
+
+document.getElementById("mensaje").innerHTML = frase;
 document.getElementById("mensaje").style.display="block";
 
-for(let i=0;i<40;i++){
+document.getElementById("carta").style.display="block";
 
-let corazon=document.createElement("div");
+for(let i=0;i<30;i++){
+
+let corazon = document.createElement("div");
 
 corazon.className="corazon";
 corazon.innerHTML="❤️";
 
 corazon.style.left=Math.random()*100+"vw";
-corazon.style.bottom="0";
 
 document.body.appendChild(corazon);
 
 setTimeout(()=>{
 corazon.remove();
 },4000);
+
 }
+
 }
-</script></body>
+
+</script>
+
+</body>
 </html>
